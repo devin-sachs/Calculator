@@ -40,55 +40,189 @@ btn_container.addEventListener('click', (event) => {
     }
 
     if (event.target.id.toLowerCase() === 'zero') {
-        textBox.value = textBox.value + '0';
+
+        if (typeof inputOne == 'undefined') {
+            textBox.value = '0';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (typeof variable !== 'undefined' && typeof inputTwo == 'undefined') {
+            textBox.value = '0';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'one') {
-        textBox.value = textBox.value + '1';
+        if (!inputOne) {
+            textBox.value = '1';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '1';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'two') {
-        textBox.value = textBox.value + '2';
+        if (!inputOne) {
+            textBox.value = '2';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '2';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'three') {
-        textBox.value = textBox.value + '3';
+
+        if (!inputOne) {
+            textBox.value = '3';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '3';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'four') {
-        textBox.value = textBox.value + '4';
+
+        if (!inputOne) {
+            textBox.value = '4';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '4';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'five') {
-        textBox.value = textBox.value + '5';
+
+        if (!inputOne) {
+            textBox.value = '5';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '5';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'six') {
-        textBox.value = textBox.value + '6';
+        if (!inputOne) {
+            textBox.value = '6';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '6';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'seven') {
-        textBox.value = textBox.value + '7';
+        if (!inputOne) {
+            textBox.value = '7';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '7';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'eight') {
-        textBox.value = textBox.value + '8';
+        if (!inputOne) {
+            textBox.value = '8';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '8';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'nine') {
-        textBox.value = textBox.value + '9';
+        if (!inputOne) {
+            textBox.value = '9';
+            inputOne = textBox.value;
+            console.log('inputOne = ' + inputOne);
+        }
+        else if (inputOne && !inputTwo) {
+            textBox.value = '9';
+            inputTwo = textBox.value;
+            console.log('inputTwo = ' + inputTwo);
+        }
     }
     else if (event.target.id.toLowerCase() === 'add') {
-        textBox.value = textBox.value + '+';
+        textBox.value = '+';
+        operator = textBox.value;
+        console.log(inputOne);
+        console.log(inputTwo);
     }
     else if (event.target.id.toLowerCase() === 'subtract') {
-        textBox.value = textBox.value + '-';
+        textBox.value = '-';
+        operator = textBox.value;
     }
     else if (event.target.id.toLowerCase() === 'multiply') {
-        textBox.value = textBox.value + '*';
+        textBox.value = '*';
+        operator = textBox.value;
     }
     else if (event.target.id.toLowerCase() === 'divide') {
-        textBox.value = textBox.value + '/';
+        textBox.value = '/';
+        operator = textBox.value;
     }
     else if (event.target.id.toLowerCase() === 'decimal') {
-        textBox.value = textBox.value + '.';
+        textBox.value = '.';
+        operator = textBox.value;
     }
     else if (event.target.id.toLowerCase() === 'equals') {
-        textBox.value = textBox.value + '=';
+        textBox.value = '=';
+        switch (operator) {
+            case '+':
+                // add code to sum numbers 
+                console.log(operator);
+                console.log(inputOne);
+                console.log(inputTwo);
+                textBox.value = add(Number(inputOne), Number(inputTwo));
+                break;
+            case '-':
+                console.log(operator);
+                console.log(inputOne);
+                console.log(inputTwo);
+                textBox.value = subtract(Number(inputOne), Number(inputTwo));
+                break;
+            case '*':
+                console.log(operator);
+                console.log(inputOne);
+                console.log(inputTwo);
+                textBox.value = multiply(Number(inputOne), Number(inputTwo));
+                break;
+            case '/':
+                console.log(operator);
+                console.log(inputOne);
+                console.log(inputTwo);
+                textBox.value = divide(Number(inputOne), Number(inputTwo));
+                break;
+
+
+        }
+
+
     }
     else if (event.target.id.toLowerCase() === 'clear') {
         textBox.value = '';
+        inputOne = undefined;
+        inputTwo = undefined;
     }
 
 
