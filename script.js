@@ -25,214 +25,271 @@ const divide = function (a, b) {
 let inputOne;
 let inputTwo;
 let operator;
-let displayValue;
+const displayArray = [];
 
 //
 
 textBox = document.getElementById('textbox');
+
+clearDisplay();
+//textBox = textBoxID.value // for some teason this isn't working so far. 
 //document.body.appendChild(textBox); // this is not neccesary 
 
-let btn_container = document.getElementById('btn-container');
+let btn_container = document.querySelector('.btn-container');
+
 btn_container.addEventListener('click', (event) => {
     const isButton = event.target.nodeName === 'BUTTON';
     if (!isButton) {
         return;
     }
+    buttonID = event.target.id.toLowerCase();
+    currentPress = event.target.innerText
+    console.log(currentPress);
+    displayArray.push(currentPress);
+    displayValue = displayArray.join('');
 
-    if (event.target.id.toLowerCase() === 'zero') {
-
-        if (typeof inputOne == 'undefined') {
-            textBox.value = '0';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (typeof variable !== 'undefined' && typeof inputTwo == 'undefined') {
-            textBox.value = '0';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'one') {
-        if (!inputOne) {
-            textBox.value = '1';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '1';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'two') {
-        if (!inputOne) {
-            textBox.value = '2';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '2';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'three') {
-
-        if (!inputOne) {
-            textBox.value = '3';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '3';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'four') {
-
-        if (!inputOne) {
-            textBox.value = '4';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '4';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'five') {
-
-        if (!inputOne) {
-            textBox.value = '5';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '5';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'six') {
-        if (!inputOne) {
-            textBox.value = '6';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '6';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'seven') {
-        if (!inputOne) {
-            textBox.value = '7';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '7';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'eight') {
-        if (!inputOne) {
-            textBox.value = '8';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '8';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'nine') {
-        if (!inputOne) {
-            textBox.value = '9';
-            inputOne = textBox.value;
-            console.log('inputOne = ' + inputOne);
-        }
-        else if (inputOne && !inputTwo) {
-            textBox.value = '9';
-            inputTwo = textBox.value;
-            console.log('inputTwo = ' + inputTwo);
-        }
-    }
-    else if (event.target.id.toLowerCase() === 'add') {
-        textBox.value = '+';
-        operator = textBox.value;
-        console.log(inputOne);
-        console.log(inputTwo);
-    }
-    else if (event.target.id.toLowerCase() === 'subtract') {
-        textBox.value = '-';
-        operator = textBox.value;
-    }
-    else if (event.target.id.toLowerCase() === 'multiply') {
-        textBox.value = '*';
-        operator = textBox.value;
-    }
-    else if (event.target.id.toLowerCase() === 'divide') {
-        textBox.value = '/';
-        operator = textBox.value;
-    }
-    else if (event.target.id.toLowerCase() === 'decimal') {
-        textBox.value = '.';
-        operator = textBox.value;
-    }
-    else if (event.target.id.toLowerCase() === 'equals') {
-        textBox.value = '=';
-        switch (operator) {
-            case '+':
-                // add code to sum numbers 
-                console.log(operator);
-                console.log(inputOne);
-                console.log(inputTwo);
-                textBox.value = add(Number(inputOne), Number(inputTwo));
-                break;
-            case '-':
-                console.log(operator);
-                console.log(inputOne);
-                console.log(inputTwo);
-                textBox.value = subtract(Number(inputOne), Number(inputTwo));
-                break;
-            case '*':
-                console.log(operator);
-                console.log(inputOne);
-                console.log(inputTwo);
-                textBox.value = multiply(Number(inputOne), Number(inputTwo));
-                break;
-            case '/':
-                console.log(operator);
-                console.log(inputOne);
-                console.log(inputTwo);
-                textBox.value = divide(Number(inputOne), Number(inputTwo));
-                break;
-
-
-        }
-
-
-    }
-    else if (event.target.id.toLowerCase() === 'clear') {
-        textBox.value = '';
-        inputOne = undefined;
-        inputTwo = undefined;
+    switch (buttonID) {
+        case 'clear':
+            console.log(buttonID);
+            clearDisplay();
+            break;
+        //default:
+        case 'zero':
+        case 'one':
+        case 'two':
+        case 'three':
+        case 'four':
+        case 'five':
+        case 'six':
+        case 'seven':
+        case 'eight':
+        case 'nine':
+            console.log(buttonID);
+            textBox.value = displayValue
+            console.log(displayValue);
     }
 
 
-
-})
-
+});
 
 
+//     if (buttonID === 'zero') {
+
+//         if (!inputOne) {
+//             currentValue = displayValue.push('0');
+//             textBox.value = currentValue;
+//             //inputOne = displayValue;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+
+//             //typeof inputTwo !== 'undefined' && typeof inputTwo == 'undefined'
+//             currentValue = displayValue.push('0');
+//             textBox.value += displayValue;
+//             //inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'one') {
+//         if (!inputOne) {
+//             currentValue = displayValue.push('1');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('1');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'two') {
+//         if (!inputOne) {
+//             currentValue = displayValue.push('2');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('2');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'three') {
+
+//         if (!inputOne) {
+//             currentValue = displayValue.push('3');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('3');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'four') {
+
+//         if (!inputOne) {
+//             currentValue = displayValue.push('4');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('4');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'five') {
+
+//         if (!inputOne) {
+//             currentValue = displayValue.push('5');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('5');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'six') {
+//         if (!inputOne) {
+//             currentValue = displayValue.push('6');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('6');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'seven') {
+//         if (!inputOne) {
+//             currentValue = displayValue.push('7');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('7');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'eight') {
+//         if (!inputOne) {
+//             currentValue = displayValue.push('8');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('8');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'nine') {
+//         if (!inputOne) {
+//             currentValue = displayValue.push('9');
+//             textBox.value = displayValue;
+//             inputOne = textBox.value;
+//             console.log('inputOne = ' + inputOne);
+//         }
+//         else if (inputOne && !inputTwo) {
+//             currentValue = displayValue.push('9');
+//             textBox.value = displayValue;
+//             inputTwo = textBox.value;
+//             console.log('inputTwo = ' + inputTwo);
+//         }
+//     }
+//     else if (buttonID === 'add') {
+//         textBox.value = '+';
+//         operator = textBox.value;
+//         console.log(inputOne);
+//         console.log(inputTwo);
+//     }
+//     else if (buttonID === 'subtract') {
+//         textBox.value = '-';
+//         operator = textBox.value;
+//     }
+//     else if (buttonID === 'multiply') {
+//         textBox.value = '*';
+//         operator = textBox.value;
+//     }
+//     else if (buttonID === 'divide') {
+//         textBox.value = '/';
+//         operator = textBox.value;
+
+//     }
+//     else if (buttonID === 'decimal') {
+//         textBox.value = '.';
+//         operator = textBox.value;
+//     }
+//     else if (buttonID === 'equals') {
+//         textBox.value = '=';
+//         evalResult();
+
+//     }
+//     else if (buttonID === 'clear') {
+//         clearDisplay();
+//     }
 
 
+
+// })
+
+function clearDisplay() {
+    textBox.value = '';
+    inputOne = undefined;
+    inputTwo = undefined;
+}
+
+function evalResult() {
+    switch (operator) {
+        case '+':
+            // add code to sum numbers 
+            // console.log(operator);
+            // console.log(inputOne);
+            // console.log(inputTwo);
+            textBox.value = add(Number(inputOne), Number(inputTwo));
+            break;
+        case '-':
+            // console.log(operator);
+            // console.log(inputOne);
+            // console.log(inputTwo);
+            textBox.value = subtract(Number(inputOne), Number(inputTwo));
+            break;
+        case '*':
+            // console.log(operator);
+            // console.log(inputOne);
+            // console.log(inputTwo);
+            textBox.value = multiply(Number(inputOne), Number(inputTwo));
+            break;
+        case '/':
+            // console.log(operator);
+            // console.log(inputOne);
+            // console.log(inputTwo);
+            textBox.value = divide(Number(inputOne), Number(inputTwo));
+            break;
+    }
+}
 
 
 

@@ -16,6 +16,8 @@
     padding: 10px;
 }
 
-.btn {
+.btn,
+.btn-num,
+.btn-func {
     width: 30px;
 }
