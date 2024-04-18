@@ -111,6 +111,9 @@ btn_container.addEventListener('click', (event) => {
             }
             displayValue = resultValue;
 
+            // this prevents the = sign from performing any unexpected operations after the inital one.
+            inputOne = '';
+            inputTwo = '';
     }
     //}
 });
