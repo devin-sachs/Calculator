@@ -69,7 +69,11 @@ btn_container.addEventListener('click', (event) => {
             console.log(typeof (displayValue));
             textBox.textContent = displayValue;
             break;
-        // }
+        case 'del':
+            displayArray.pop();
+            displayValue = displayArray.join('');
+            textBox.textContent = displayValue;
+            break;
         case 'add':
         case 'subtract':
         case 'multiply':
@@ -120,7 +124,7 @@ btn_container.addEventListener('click', (event) => {
                     textBox.textContent = inputOne + ' ' + operator + ' ' + inputTwo + ' = '
                     answerBox.textContent = roundedResult;
                     inputOne = roundedResult;
-                    textBox.textContent = '';
+                    //textBox.textContent = '';
                     break;
                 default: alert('please enter a valid expression');
                     clearDisplay();
