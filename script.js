@@ -29,7 +29,9 @@ let displayArray = [];
 
 //
 
-textBox = document.getElementById('textbox');
+let textBox = document.querySelector('.textbox');
+let answerBox = document.querySelector('.answerbox');
+
 
 clearDisplay();
 //textBox = textBoxID.value // for some teason this isn't working so far. 
@@ -61,10 +63,11 @@ btn_container.addEventListener('click', (event) => {
         case 'seven':
         case 'eight':
         case 'nine':
-            //console.log(buttonID);
+        case 'decimal':
             displayArray.push(currentPress);
             displayValue = displayArray.join('');
-            textBox.value = displayValue;
+            console.log(typeof (displayValue));
+            textBox.textContent = displayValue;
             break;
         // }
         case 'add':
@@ -87,54 +90,58 @@ btn_container.addEventListener('click', (event) => {
                 case '+':
                     resultValue = add(Number(inputOne), Number(inputTwo));
                     console.log(resultValue);
-                    displayValue = resultValue;
-                    textBox.value = displayValue;
+                    roundedResult = parseFloat(resultValue.toFixed(9));
+                    textBox.textContent = inputOne + ' ' + operator + ' ' + inputTwo + ' = '
+                    answerBox.textContent = roundedResult;
                     break;
                 case '-':
                     resultValue = subtract(Number(inputOne), Number(inputTwo));
+
                     console.log(resultValue);
-                    displayValue = resultValue;
-                    textBox.value = displayValue;
+                    roundedResult = parseFloat(resultValue.toFixed(9));
+                    textBox.textContent = inputOne + ' ' + operator + ' ' + inputTwo + ' = '
+                    answerBox.textContent = roundedResult;
+                    inputOne = roundedResult;
                     break;
                 case '*':
                     resultValue = multiply(Number(inputOne), Number(inputTwo));
                     console.log(resultValue);
-                    displayValue = resultValue;
-                    textBox.value = displayValue;
+                    roundedResult = parseFloat(resultValue.toFixed(9));
+                    textBox.textContent = inputOne + ' ' + operator + ' ' + inputTwo + ' = '
+                    answerBox.textContent = roundedResult;
+                    inputOne = roundedResult;
                     break;
                 case '/':
                     resultValue = divide(Number(inputOne), Number(inputTwo));
                     console.log(resultValue);
-                    displayValue = resultValue;
-                    textBox.value = displayValue;
+                    roundedResult = parseFloat(resultValue.toFixed(9));
+                    //displayValue = resultValue;
+                    //previousOp = $
+                    textBox.textContent = inputOne + ' ' + operator + ' ' + inputTwo + ' = '
+                    answerBox.textContent = roundedResult;
+                    inputOne = roundedResult;
+                    textBox.textContent = '';
                     break;
+                default: alert('please enter a valid expression');
+                    clearDisplay();
             }
             displayValue = resultValue;
+
 
             // this prevents the = sign from performing any unexpected operations after the inital one.
             inputOne = '';
             inputTwo = '';
     }
-    //}
 });
 
-//console.log(displayValue);
+
+//add ability to display the operation in teh background after you hit equal 
 
 
-// displayArray = [];
-// displayValue = '';
-// //console.log(buttonID);
-// displayArray.push(currentPress);
-// displayValue = displayArray.join('');
-// textBox.value = displayValue
-// //console.log(displayValue);
-// inputTwo = displayValue;
-// break;
-
-// })
 
 function clearDisplay() {
-    textBox.value = '';
+    textBox.textContent = '';
+    answerBox.textContent = '';
     displayArray = [];
     displayValue = undefined;
     inputOne = undefined;

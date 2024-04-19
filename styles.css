@@ -7,17 +7,41 @@
     flex-wrap: wrap;
     margin: auto;
     /* gap: 30px; */
-    max-width: 600px;
+    max-width: 300px;
+    max-height: 500px;
+    border-style: solid;
 }
 
 .btn-container {
     max-width: 100px;
-
     padding: 10px;
+    justify-content: center;
 }
 
 .btn,
 .btn-num,
 .btn-func {
     width: 30px;
+}
+
+.calculator {
+    width: 300px;
+    height: 500px;
+}
+
+.screen {
+    width: 150px;
+    height: 60px;
+    border: solid 1px;
+    justify-content: center;
+    /* margin: 5px; */
+}
+
+.textbox {
+    margin: 5px;
+}
+
+.answerbox {
+    text-align: right;
+    margin: 10px;
 }
