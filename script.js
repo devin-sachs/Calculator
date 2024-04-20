@@ -79,6 +79,7 @@ btn_container.addEventListener('click', (event) => {
         case 'multiply':
         case 'divide':
             operator = currentPress;
+            textBox.textContent = ' ' + operator;
             inputOne = displayValue;
             console.log('inputOne ' + inputOne)
             displayArray = [];
