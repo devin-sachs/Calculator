@@ -27,11 +27,31 @@
     flex-wrap: wrap;
     margin: auto;
     width: 300px;
-    height: 500px;
+    height: 400px;
     border: 1px solid;
+    background-color: #181818;
+}
+
+.screen {
+    width: 250px;
+    height: 60px;
+    border: solid 1px;
+    justify-content: center;
+    margin: 10px;
+    background-color: #666600;
+}
+
+.textbox {
+    margin: 5px;
+}
+
+.answerbox {
+    text-align: right;
+    margin: 10px;
 }
 
 .btn-container {
+    background-color: grey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +60,7 @@
     margin: auto;
     max-width: 300px;
     max-height: 500px;
-    height: 400px;
+    height: 300px;
     border: solid;
     /* padding: 10px; */
 }
@@ -78,21 +98,3 @@
     height: 40px;
 } 
 
-
-
-.screen {
-    width: 150px;
-    height: 60px;
-    border: solid 1px;
-    justify-content: center;
-    margin: 10px;
-}
-
-.textbox {
-    margin: 5px;
-}
-
-.answerbox {
-    text-align: right;
-    margin: 10px;
-}

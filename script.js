@@ -85,6 +85,11 @@ btn_container.addEventListener('click', (event) => {
             displayValue = '';
             break;
 
+        case 'sin':
+        case 'integral':
+            textBox.textContent = 'LOL just kidding, this is just a place holder to fill the space';
+
+
     }
     inputTwo = displayValue;
     console.log('inputTwo ' + inputTwo)
