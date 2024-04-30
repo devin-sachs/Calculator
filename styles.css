@@ -27,18 +27,23 @@
     flex-wrap: wrap;
     margin: auto;
     width: 300px;
-    height: 400px;
+    height: 330px;
     border: 1px solid;
     background-color: #181818;
+
 }
 
 .screen {
+    display: flex;
+    flex-direction: column;
     width: 250px;
-    height: 60px;
+    height: 80px;
     border: solid 1px;
-    justify-content: center;
+    justify-content: left;
     margin: 10px;
     background-color: #666600;
+
+
 }
 
 .textbox {
@@ -47,7 +52,7 @@
 
 .answerbox {
     text-align: right;
-    margin: 10px;
+    margin: 5px;
 }
 
 .btn-container {
@@ -60,12 +65,12 @@
     margin: auto;
     max-width: 300px;
     max-height: 500px;
-    height: 300px;
+    /* height: 300px; */
     border: solid;
-    /* padding: 10px; */
+    padding: 5px;
 }
 
-.btn-num-container{
+.btn-num-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +81,7 @@
     width: 180px;
 }
 
-.btn-func-container{ 
+.btn-func-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,5 +101,4 @@
 .btn-num {
     width: 60px;
     height: 40px;
-} 
-
+}

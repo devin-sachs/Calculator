@@ -64,9 +64,17 @@ btn_container.addEventListener('click', (event) => {
         case 'eight':
         case 'nine':
         case 'decimal':
+
+            //TO DO: 
+            //Try to detect if multiple decimals are input
+            // if (textBox.textContent.includes()) {
+            // alert('You can\'t enter multiple decimals points!'); // need a regular expression to catch all '.' characters after the first one. 
+            // clearDisplay();
+            //     break;
+
+            // };
             displayArray.push(currentPress);
             displayValue = displayArray.join('');
-            console.log(typeof (displayValue));
             textBox.textContent = displayValue;
             break;
         case 'del':
@@ -83,7 +91,7 @@ btn_container.addEventListener('click', (event) => {
             inputOne = displayValue;
             console.log('inputOne ' + inputOne)
             displayArray = [];
-            displayValue = '';
+            displayValue = null;
             break;
 
         case 'sin':
@@ -145,9 +153,6 @@ btn_container.addEventListener('click', (event) => {
 });
 
 
-//add ability to display the operation in teh background after you hit equal 
-
-
 
 function clearDisplay() {
     textBox.textContent = '';
@@ -179,6 +184,10 @@ function evalResult() {
     }
 }
 
+
+//TO DO:
+// Handle large inputs better
+// Screen overflows outside of div if the input is too large
 
 
 
